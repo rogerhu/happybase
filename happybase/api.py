@@ -18,7 +18,7 @@ from thrift.protocol import TBinaryProtocol
 from .hbase import Hbase
 from .hbase.ttypes import BatchMutation, ColumnDescriptor, Mutation, TScan
 
-from .filter import _Filter
+from .filter import _Node
 from .util import thrift_type_to_dict, pep8_to_camel_case, str_increment
 
 __all__ = ['DEFAULT_HOST', 'DEFAULT_PORT', 'Connection', 'Table', 'Batch']
@@ -576,7 +576,7 @@ class Table(object):
             row_start = ''
 
         if filter is not None:
-            if isinstance(filter, _Filter):
+            if isinstance(filter, _Node):
                 filter = bytes(filter)
 
             if not isinstance(filter, bytes):
