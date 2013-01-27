@@ -25,6 +25,11 @@ The HappyBase API is organised as follows:
    The :py:class:`Batch` class implements the batch API for data manipulation,
    and is available through the :py:meth:`Table.batch()` method.
 
+:py:mod:`~happybase.filter`:
+   The :py:mod:`happybase.filter` module provides various helper routines to
+   construct filter strings to be used with the `filter` argument to
+   :py:meth:`Table.scan()`.
+
 
 Connection
 ==========
@@ -43,5 +48,35 @@ Batch
 
 .. autoclass:: happybase.Batch
 
+
+Scanner filters
+===============
+
+.. autofunction:: happybase.filter.escape
+
+.. autofunction:: happybase.filter.make_filter
+
+
+The following filters are defined by default:
+
+.. class:: happybase.filter.KeyOnlyFilter
+.. class:: happybase.filter.FirstKeyOnlyFilter
+.. class:: happybase.filter.PrefixFilter
+.. class:: happybase.filter.ColumnPrefixFilter
+.. class:: happybase.filter.MultipleColumnPrefixFilter
+.. class:: happybase.filter.ColumnCountGetFilter
+.. class:: happybase.filter.PageFilter
+.. class:: happybase.filter.ColumnPaginationFilter
+.. class:: happybase.filter.InclusiveStopFilter
+.. class:: happybase.filter.TimeStampsFilter
+.. class:: happybase.filter.RowFilter
+.. class:: happybase.filter.FamilyFilter
+.. class:: happybase.filter.QualifierFilter
+.. class:: happybase.filter.QualifierFilter
+.. class:: happybase.filter.ValueFilter
+.. class:: happybase.filter.DependentColumnFilter
+.. class:: happybase.filter.SingleColumnValueFilter
+.. class:: happybase.filter.SingleColumnValueExcludeFilter
+.. class:: happybase.filter.ColumnRangeFilter
 
 .. vim: set spell spelllang=en:
