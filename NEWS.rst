@@ -8,6 +8,10 @@ HappyBase 0.5 (not yet released)
 
 Note: this release is a work in progress!
 
+* The new :py:mod:`happybase.filter` module provides improved support for
+  specifying scanner filters that should be applied at the region server. See
+  the tutorial and API docs for more information.
+
 * The :py:meth:`Connection.delete_table` method now features an optional
   `disable` parameter to make deleting enabled tables easier.
 
@@ -26,6 +30,8 @@ Note: this release is a work in progress!
 * The :py:class:`Connection` constructor now features an optional `timeout`
   parameter to to specify the timeout to use for the Thrift socket (`issue #15
   <https://github.com/wbolster/happybase/issues/15>`_)
+
+* Documentation improvements
 
 
 HappyBase 0.4
